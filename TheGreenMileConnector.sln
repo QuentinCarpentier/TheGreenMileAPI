@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGreenMileConnector", "TheGreenMileConnector\TheGreenMileConnector.csproj", "{485A38FA-A9DE-4CD0-B128-62F5769A6FBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheGreenMileAPI", "TheGreenMileAPI\TheGreenMileAPI.csproj", "{786E435C-B6B4-4383-8B1C-9AC70B312A89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{485A38FA-A9DE-4CD0-B128-62F5769A6FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{485A38FA-A9DE-4CD0-B128-62F5769A6FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{485A38FA-A9DE-4CD0-B128-62F5769A6FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{786E435C-B6B4-4383-8B1C-9AC70B312A89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{786E435C-B6B4-4383-8B1C-9AC70B312A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{786E435C-B6B4-4383-8B1C-9AC70B312A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{786E435C-B6B4-4383-8B1C-9AC70B312A89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
