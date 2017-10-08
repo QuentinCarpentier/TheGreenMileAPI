@@ -5,14 +5,31 @@ namespace TheGreenMileAPI.Helpers
 {
     public static class SerialPortHelper
     {
+        private static int player1Port;
+        private static int player2Port;
+
+        public static void SetPorts()
+        {
+            foreach(string item in ports)
+            {
+                SerialPort port = new SerialPort(item, 9600, Parity.None, 8, StopBits.One);
+                port.Open();
+                port.Write("i");
+                byte[] buffer;
+                port.Read(buffer);
+                port.Close();
+
+                string res = System.Text.Encoding.Default.GetString(buffer);
+                if (res == "1")
+                    SerialPortHelper.player1Port = item;
+                else if (res == "2")
+                    SerialPortHelper.player2Port = item;
+
+            }
+        }
+
         public static void WritePort(string portName, double intensity)
         {
-            SerialPort port = new SerialPort(portName, 9600, Parity.None, 8, StopBits.One);
-
-            port.Open();
-            port.Write("r");
-            port.Close();
-
             port.Open();
             port.Write(intensity.ToString());
             port.Close();

@@ -2,12 +2,12 @@
 using System.Web.Http;
 using TheGreenMileAPI.Helpers;
 using System.Net;
+using System.IO.Ports;
 
 namespace TheGreenMileAPI.Controllers
 {
     public class TheGreenMileController : ApiController
     {
-        private string portName = "";
         private double intensity = 0;
         private string resultTest = "";
 
@@ -15,10 +15,12 @@ namespace TheGreenMileAPI.Controllers
         {
             try
             {
+                string portName = "";
+
                 if (player == 1)
-                    portName = "COM5";
+                    portName = SerialPortHelper.player1Port;
                 else
-                    portName = "COM1";
+                    portName = SerialPortHelper.player2Port;
 
                 intensity = SerialPortHelper.CreateIntensity(load);
 
@@ -27,6 +29,7 @@ namespace TheGreenMileAPI.Controllers
                 resultTest = $"Player: {player} Port name: {portName} Intensity: {intensity}";
 
                 return Request.CreateResponse(HttpStatusCode.OK);
+
             }
             catch (System.Exception)
             {
